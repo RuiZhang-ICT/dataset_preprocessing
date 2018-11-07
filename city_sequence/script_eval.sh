@@ -1,0 +1,17 @@
+python deeplab/eval.py \
+    --logtostderr \
+    --eval_split="val" \
+    --model_variant="xception_71" \
+    --dense_prediction_cell_json="deeplab/core/dense_prediction_cell_branch5_top1_cityscapes.json" \
+    --atrous_rates=12 \
+    --atrous_rates=24 \
+    --atrous_rates=36 \
+    --output_stride=8 \
+    --decoder_output_stride=4 \
+    --eval_crop_size=1025 \
+    --eval_crop_size=2049 \
+    --dataset="cityscapes" \
+    --checkpoint_dir="deeplab/models_cityscapes/deeplab_cityscapes_xception71_trainvalfine_2018_09_08/model.ckpt" \
+    --eval_logdir="deeplab/logs" \
+    --dataset_dir="deeplab/datasets/cityscapes/tfrecord"
+    --max_number_of_evaluations=1
